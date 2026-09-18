@@ -1,0 +1,24 @@
+{
+ "builtAt": "2026-11-28 22:30:00",
+ "builtMs": 1795876200119,
+ "rigs": [
+  {
+   "name": "Vegas 紙上帳",
+   "ok": true,
+   "bytes": 36092,
+   "err": ""
+  },
+  {
+   "name": "527幣 波動篩選",
+   "ok": true,
+   "bytes": 62583,
+   "err": ""
+  },
+  {
+   "name": "PPO 波動篩選",
+   "ok": true,
+   "bytes": 525556,
+   "err": ""
+  }
+ ]
+}

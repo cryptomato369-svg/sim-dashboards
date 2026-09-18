@@ -1,0 +1,55 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>模擬交易紙上帳 · 公開快照</title>
+<style>
+body{background:#0d1117;color:#c9d1d9;font-family:system-ui,"Microsoft JhengHei",sans-serif;margin:0;padding:28px 18px;max-width:860px;margin:0 auto}
+h1{font-size:21px;margin:0 0 6px}
+.lead{color:#8b949e;font-size:14px;margin:0 0 22px;line-height:1.7}
+.card{display:block;background:#161b22;border:1px solid #30363d;border-radius:10px;padding:16px 18px;margin:0 0 12px;text-decoration:none;color:inherit}
+.card:hover{border-color:#58a6ff;background:#1c2128}
+.card.bad{opacity:.55;cursor:not-allowed}
+.nm{font-size:16px;font-weight:600;color:#e6edf3}
+.sub{color:#8b949e;font-size:13px;margin-top:3px}
+.st{color:#7ee787;font-size:12px;margin-top:8px;font-family:Consolas,monospace}
+.card.bad .st{color:#ffb4b4}
+.foot{color:#6e7681;font-size:12px;line-height:1.9;margin-top:26px;border-top:1px solid #21262d;padding-top:16px}
+#age{font-weight:600}
+</style></head><body>
+<h1>模擬交易紙上帳 · 公開快照</h1>
+<p class="lead">三套模擬交易（紙上帳，非真錢）的畫面快照，每 5 分鐘更新一次。<br>
+這是<b>唯讀</b>頁面:沒有任何按鈕能改動帳本。</p>
+<a class="card " href="vegas.html">
+      <div class="nm">Vegas 紙上帳</div>
+      <div class="sub">21 本帳 · 雷達中魚+ × 15m Vegas 帶回踩</div>
+      <div class="st">✓ 快照正常 · 34,366 bytes</div>
+    </a>
+<a class="card " href="volume.html">
+      <div class="nm">527幣 波動篩選</div>
+      <div class="sub">42 本帳 · 3 種進場 × 7 種挑法</div>
+      <div class="st">✓ 快照正常 · 66,580 bytes</div>
+    </a>
+<a class="card " href="ppo.html">
+      <div class="nm">PPO 波動篩選</div>
+      <div class="sub">63 本帳 · 3 種買法 × 7 挑法 × 3 週期</div>
+      <div class="st">✓ 快照正常 · 32,688 bytes</div>
+    </a>
+<div class="foot">
+  快照時間 <span id="age">—</span><br>
+  來源電腦關機或斷線時,這裡會停在最後一次成功的畫面,並在各頁頂端標明資料停在幾點 —— <b>不會假裝是即時數字</b>。
+</div>
+<script>
+window.__SNAP_AT__=1789840703246;
+(function(){
+  function p(){
+    var mins=Math.floor((Date.now()-window.__SNAP_AT__)/60000);
+    var when=new Date(window.__SNAP_AT__).toLocaleString('zh-TW',{timeZone:'Asia/Taipei',hour12:false});
+    var age=mins<1?'不到 1 分鐘前':(mins<60?mins+' 分鐘前':Math.floor(mins/60)+' 小時 '+(mins%60)+' 分鐘前');
+    var e=document.getElementById('age');
+    e.textContent=age+'（台北 '+when+'）';
+    e.style.color = mins<15 ? '#7ee787' : (mins<60 ? '#ffd79a' : '#ffb4b4');
+  }
+  p(); setInterval(p,30000);
+})();
+</script>
+</body></html>
